@@ -10,10 +10,10 @@ namespace PracticingLambdaExpression
         {
             List<Person> listPersonInCity = new List<Person>();
             AddRecords(listPersonInCity);
-           // Retriving_TopTwoRecord_ForAgeIs_LessThanSixty(listPersonInCity);
+            Retriving_TopTwoRecord_ForAgeIs_LessThanSixty(listPersonInCity);
             CheckingForTeenagerPerson(listPersonInCity);
             AllPersonsAverageAge(listPersonInCity);
-           
+            CheckNameExistOrNot(listPersonInCity);
         }
         private static void AddRecords(List<Person> listPersonInCity)
             {
@@ -52,7 +52,16 @@ namespace PracticingLambdaExpression
             Console.WriteLine("The Average of all the person's age is :" + avgAge);
 
         }
-
+        public static void CheckNameExistOrNot(List<Person> listPersonInCity)
+        {
+            if (listPersonInCity.Exists(e => e.Name == "SAM"))
+            {
+                Console.WriteLine("Yes, the name of the person is exists in the list");
+            }
+            else
+                Console.WriteLine("No, the name of the person doesn't exists in the list");
         }
+
     }
+}
 
