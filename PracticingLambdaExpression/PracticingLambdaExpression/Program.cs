@@ -15,6 +15,7 @@ namespace PracticingLambdaExpression
             AllPersonsAverageAge(listPersonInCity);
             CheckNameExistOrNot(listPersonInCity);
             SkipRecordFromList(listPersonInCity);
+            RemoveSpecificName(listPersonInCity);
         }
         private static void AddRecords(List<Person> listPersonInCity)
             {
@@ -69,7 +70,14 @@ namespace PracticingLambdaExpression
                 Console.WriteLine("Name : " + p.Name + "\t\t Age : " + p.Age);
             }
         }
-
+        public static void RemoveSpecificName(List<Person> listPersonInCity)
+        {
+            listPersonInCity.RemoveAll(e => (e.Name == "SAM"));
+            if(listPersonInCity.TrueForAll(e=> (e.Name != "SAM")))
+            {
+                Console.WriteLine("No person is found with name SAM in the current list");
+            }
+        }
     }
 }
 
